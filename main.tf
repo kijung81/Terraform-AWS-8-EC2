@@ -67,8 +67,8 @@ resource "aws_security_group" "web" {
 
   ingress {
     description      = "https"
-    from_port        = 443
-    to_port          = 443
+    from_port        = 444
+    to_port          = 444
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
   }
@@ -96,6 +96,7 @@ resource "aws_security_group" "web" {
   }
 
   tags = {
-    Name = "${var.prefix}-web-sg"  
+    Name = "${var.prefix}-web-sg"
+    env = "new tag"
   }
 }
