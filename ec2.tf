@@ -22,6 +22,7 @@ resource "aws_instance" "web1" {
   key_name      = var.ec2_key
   tags = {
     Name = "${var.prefix}-web1"
+    service = "test"
   }
   user_data = <<-EOF
     #!/bin/bash
